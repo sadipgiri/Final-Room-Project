@@ -1,0 +1,43 @@
+camera{
+location <0,0,-100>
+look_at <0,0,0>
+}
+
+
+light_source{
+<0,0,-500>
+rgb <1,1,1>
+} 
+
+
+background{ rgb <1,1,1>}
+
+
+#declare bedWidth = 200;
+#declare bedLength = 100;
+#declare bedHeight = 40;
+
+#declare bedLegwidth = 20;
+#declare bedLegheight = 100;
+#declare bedLeglength = 20;
+
+#declare bed = box{
+<0,0,0>
+<bedWidth,bedHeigth,bedLength>
+}; 
+
+#declare bedLeg = box{
+<0,0,0>
+<bedWidth,bedHeigth,bedLength>
+};
+
+object{
+bed
+}
+
+
+object{
+bedLeg
+}
+
+

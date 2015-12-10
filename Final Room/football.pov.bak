@@ -1,0 +1,54 @@
+#include "colors.inc"
+  background{White}
+  camera {
+    
+    location <0,0,-4>
+    look_at <0,0,0>
+  }
+  light_source { <10, 20, -10> color White } 
+  
+  
+  #declare s = sphere{
+  <0,0,0>
+  3
+  };
+  
+  
+  /*object{
+  s
+  texture{
+     pigment{ brick
+              color White
+              color rgb<0.8,0.25,0.1>
+              // color mortar, color brick
+              brick_size <0.25, 0.0525, 0.125 >*2
+              // format in x-,y-,z- direction
+              mortar 0.01 // size of the mortar
+            }
+     normal { wrinkles 0.75 scale 0.01}
+     finish { diffuse 0.9 phong 0.2}
+     } // end of texture
+  }*/
+  
+  
+  
+  
+  sphere{<0,0,0>,1 
+       texture{
+         pigment{
+           ripples scale 0.5 turbulence 1.5
+           color_map {
+                  [0.0 color NeonPink ]
+                  [0.1 color NeonPink ]
+                  [0.5 color Yellow   ]
+                  [0.6 color White    ]
+                  [1.0 color Gray50   ]
+                 } // end of color_map
+              } // end of pigment
+          normal { wrinkles 0.75 scale 0.1}
+          finish { diffuse 0.9 phong 1}}}
+
+
+
+
+ 

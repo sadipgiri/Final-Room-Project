@@ -1,0 +1,21 @@
+#include "colors.inc"
+#include "textures.inc"
+
+camera{
+location <0,0,-10>
+look_at <0,0,0>
+}
+
+light_source{
+<0,0,-40>
+rgb<1,1,1>
+}
+
+
+plane{
+<0,0,-1>
+0
+pigment{
+checker color White
+color Gray}
+}

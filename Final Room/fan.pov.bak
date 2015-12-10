@@ -1,0 +1,15 @@
+#include "colors.inc"
+  background{White}
+  camera {
+    
+    location <0,2,-4>
+    look_at <0,0,0>
+  }
+  light_source { <10, 20, -10> color White }  
+  
+  
+  
+  
+  
+  triangle{<0,0,0>,<0,2,0>,<2,2,0> texture{White}}
+ 

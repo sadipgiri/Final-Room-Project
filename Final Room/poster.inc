@@ -1,0 +1,23 @@
+#declare photo = 
+    box{
+    <0,0,0>
+    <3,4,0>
+};
+
+
+object{
+    photo
+    pigment{
+        image_map{
+            jpeg "stevejobs.jpg"
+        } 
+    scale 3.8 } 
+    rotate <0,90,0>
+    
+    matrix<
+    32,0,0,
+    0,32,0,
+    0,0,32,
+    496,150,275
+    >
+}

@@ -1,0 +1,68 @@
+#declare laptop = union{
+
+#declare upperPart=box{
+    <0,1,0>
+    <2,1.06,2>
+        pigment{
+            color White
+        }
+} 
+
+object{
+    upperPart         //Lower
+    translate <0,0,-1>
+        pigment{
+            image_map {
+                "keyboard.jpg"
+            }
+    rotate<90,0,0>
+    scale 1.9
+    translate <0,0,94>
+    }             
+}
+
+object{ 
+    upperPart          //upperPart
+    rotate <90,0,0>
+    translate <0,3,-0.2>
+    scale <0,0,1.2>   
+        pigment{
+            color rgb<0.77,0.95,1>
+        }
+}
+
+object{ 
+    upperPart          //screen
+    rotate <90,0,0>
+    translate <0,3,-0.82>
+    scale <0,0,4>   
+        pigment{                       
+            image_map{
+                jpeg "finalFantacy.jpg"
+            } // if you want to get google search than change the picture into "Google.png"... enjoy!! 
+        rotate <90,0,90>
+        scale 1.46  
+        scale <0.42,1.15,0>   
+        translate <9.11,-7.19,0>
+    }
+    scale<0,0,0.2>
+    translate <0,0,0.81> 
+} 
+
+};
+
+
+object{
+    laptop
+    rotate <0,90,0>
+    
+    matrix<
+    30,0,0,
+    0,30,0,
+    0,0,30,
+    210,71,140
+    >
+        finish{
+            ambient 0.4
+        }
+}

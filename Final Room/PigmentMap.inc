@@ -1,0 +1,50 @@
+
+
+#declare BrickPigment = 
+    pigment{
+        brick
+        color Red
+        color Blue
+        scale .1
+            warp{
+                spherical
+                orientation <1,0,0>
+            }
+};
+
+
+#declare HexagonPigment = 
+    pigment{
+        hexagon
+        color Red
+        color Blue
+        color rgb<1,1,1> 
+        scale .1
+        warp{
+            spherical
+            orientation <1,1,0>
+        }
+};
+
+
+#declare ColorMap =
+    color_map{
+        [0.1, color Red]
+        //[0.3 color Yellow]
+        //[0.6 color Green]
+        [1 color Blue]
+    };
+
+
+#declare GradientPigment = 
+    pigment{
+        gradient <0,-1,0>
+        color_map {
+            ColorMap
+        }
+    scale 4
+    //translate <0,-2,0>
+    //turbulence .5
+};
+
+ 

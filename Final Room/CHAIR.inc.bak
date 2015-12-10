@@ -1,0 +1,109 @@
+
+
+
+#declare CHAIR = 
+union{
+
+#declare chairlegheight = 100;   
+#declare chairwidth = 35;
+#declare chairlegsdifference = 80;
+#declare chairseatlength = 140;
+#declare chairseatwidth = 25;
+
+
+
+#declare ChairLeg = cylinder{
+<0,0,0>
+<0,chairlegheight,0>
+chairwidth-19-6                                                                                           
+pigment{                                                        
+image_map {jpeg "WOOD.jpg"}                                                                
+}
+};                                                           
+
+#declare ChairLegs = 
+
+union{
+
+object{
+ChairLeg translate <-10,0,10>
+}
+
+
+object{
+ChairLeg
+translate <chairlegsdifference+35,0,10>
+}
+
+
+object{
+ChairLeg
+translate <-10,0,chairlegsdifference-10>
+}
+
+
+object{
+ChairLeg    
+translate <chairlegsdifference+35,0,chairlegsdifference-10>
+}
+
+
+};
+
+
+
+object{
+ChairLegs  
+} 
+
+
+
+#declare ChairSeat = box{
+<0,0,0>
+<chairseatlength,chairseatwidth,chairseatlength-15>
+};
+
+
+object{
+ChairSeat
+translate <-10,chairlegsdifference,0>
+}  
+
+object{
+ChairSeat 
+rotate <0,0,90> 
+translate <0,chairlegsdifference,0>
+}
+  
+};
+
+
+
+object{//near window
+CHAIR
+translate <0,0,10>
+pigment{
+image_map{jpeg "couchImage.jpg"}
+} 
+//scale .6
+//translate <85,1,5>
+matrix<.6,0,0 // using transformation matrix....
+0,.6,0
+0,0,.6
+85,1,5>
+}
+
+
+
+object{//near door
+CHAIR
+pigment{
+image_map{jpeg "couchImage.jpg"}
+}  
+//scale .6
+//translate <25,1,605>
+matrix<.6,0,0,  // using transformation matrix...
+0,.6,0,
+0,0,.6,
+25,1,605>
+}
